@@ -21,6 +21,12 @@ if (function_exists('add_theme_support'))
     add_theme_support('automatic-feed-links');
 }
 
+// Remove admin bar from the site
+function remove_admin_bar()
+{
+    return true;
+}
+
 // Javascripts to be included in the header
 function seekthehorizon_header_scripts() {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
@@ -45,3 +51,31 @@ function seekthehorizon_styles()
     wp_register_style('seekthehorizon', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('seekthehorizon');
 }
+
+// Remove 'text/css' from enqueued stylesheets
+function seekthehorizon_style_remove($tag)
+{
+    return preg_replace('~\s+type=["\'][^"\']++["\']~', '', $tag);
+}
+
+// Remove thumbnail height and width
+function remove_thumbnail_dimensions( $html )
+{
+    $html = preg_replace('/(width|height)=\"\d*\"\s/', "", $html);
+    return $html;
+}
+
+/*
+ * ACTIONS + FILTERS + SHORTCODES
+ */
+
+// Add actions
+add_action('init', 'seekthehorizon_header_scripts'); // Add Custom Scripts to wp_head
+add_action('wp_enqueue_scripts', 'seekthehorizon_styles'); // Add Theme Stylesheet
+
+// Remove actions
+
+// Add filters
+add_filter('style_loader_tag', 'seekthehorizon_style_remove'); // Remove 'text/css' from enqueued stylesheet
+add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
+add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
