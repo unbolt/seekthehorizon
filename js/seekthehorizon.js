@@ -1,0 +1,4 @@
+/**
+ * SEEKTHEHORIZON.COM
+ * Javascript madness
+ */
