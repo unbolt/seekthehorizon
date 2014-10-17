@@ -39,6 +39,20 @@ function seekthehorizon_header_scripts() {
     }
 }
 
+// Pagination for paged posts
+function seekthehorizon_pagination()
+{
+    global $wp_query;
+    $big = 999999999;
+    echo paginate_links(array(
+        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
+        'format' => '?paged=%#%',
+        'current' => max(1, get_query_var('paged')),
+        'total' => $wp_query->max_num_pages
+    ));
+}
+
+
 // Stylesheets to be included in the header
 function seekthehorizon_styles()
 {
@@ -72,6 +86,7 @@ function remove_thumbnail_dimensions( $html )
 // Add actions
 add_action('init', 'seekthehorizon_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'seekthehorizon_styles'); // Add Theme Stylesheet
+add_action('init', 'seekthehorizon_pagination'); // Add our Pagination
 
 // Remove actions
 
