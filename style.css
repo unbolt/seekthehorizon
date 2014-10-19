@@ -1,7 +1,7 @@
 /*
 Theme Name: Seek the Horizon
 Theme URI: http://seekthehorizon.com
-Author: Daniel Baker
+Author: Dan Baker
 Author URI: http://seekthehorizon.com/
 Description: Theme created for the website of the same name.
 License: GPL 3.0
@@ -11,3 +11,8 @@ Text Domain: seekthehorizon
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+
+body {
+	background-color: #F1EED9;
+	color: #2E221F;
+}

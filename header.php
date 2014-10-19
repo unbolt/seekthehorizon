@@ -10,3 +10,12 @@
         <? wp_head(); ?>
 	</head>
 	<body <? body_class(); ?>>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					Title
+				</div>
+				<div class="col-md-4">
+					Social
+				</div>
+			</div>
