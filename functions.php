@@ -5,10 +5,6 @@
  *
  */
 
-@ini_set( 'upload_max_size' , '64M' );
-@ini_set( 'post_max_size', '64M');
-@ini_set( 'max_execution_time', '300' );
-
 if (function_exists('add_theme_support'))
 {
     // Add Menu Support
@@ -101,6 +97,39 @@ function change_avatar_css($class) {
 	return $class;
 }
 
+// Add menu locations
+function seekthehorizon_register_menu()
+{
+    register_nav_menus(array(
+        'sidebar-top-menu' => __('Sidebar Top Menu', 'seekthehorizon'), 
+        'sidebar-bottom-menu' => __('Sidebar Bottom Menu', 'seekthehorizon') 
+    ));
+}
+
+// Add widget areas
+if (function_exists('register_sidebar'))
+{
+    register_sidebar(array(
+        'name' => __('Left Top', 'seekthehorizon'),
+        'description' => __('Widgets appear top in the sidebar', 'seekthehorizon'),
+        'id' => 'sidebar-widgets-top',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
+    register_sidebar(array(
+        'name' => __('Left Bottom', 'seekthehorizon'),
+        'description' => __('Widgets appear bottom in the sidebar', 'seekthehorizon'),
+        'id' => 'sidebar-widgets-bottom',
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+}
+
 /*
  * ACTIONS + FILTERS + SHORTCODES
  */
@@ -110,6 +139,7 @@ add_action('init', 'seekthehorizon_header_scripts'); // Add Custom Scripts to wp
 add_action('wp_enqueue_scripts', 'seekthehorizon_styles'); // Add Theme Stylesheet
 add_action('init', 'seekthehorizon_pagination'); // Add our Pagination
 add_action('pre_get_posts', 'seekthehorizon_modify_main_query'); // Remove categories from homepage
+add_action('init', 'seekthehorizon_register_menu'); // Add Menu
 
 // Remove actions
 
