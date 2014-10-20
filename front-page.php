@@ -3,8 +3,6 @@
 <main role="main">
     <section>
 
-        <h1>Posts</h1>
-
         <?php get_template_part('loop'); ?>
 
         <?php get_template_part('pagination'); ?>

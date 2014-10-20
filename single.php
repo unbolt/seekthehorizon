@@ -2,12 +2,11 @@
 
 <main role="main">
     <section>
-
-        <h1>Latest Posts</h1>
-
         <?php get_template_part('loop'); ?>
 
         <?php get_template_part('pagination'); ?>
+        
+        <?php comments_template(); ?> 
 
     </section>
 </main>

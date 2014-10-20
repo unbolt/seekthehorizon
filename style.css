@@ -7,12 +7,92 @@ Description: Theme created for the website of the same name.
 License: GPL 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: seekthehorizon
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
 */
 
 body {
 	background-color: #F1EED9;
 	color: #2E221F;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1, h2 {
+	font-family: 'Lato', sans-serif;
+	color: #58351A;
+}
+
+h3, h4, h5, h6 {
+	color: #00a3de;
+	font-family: 'Lato', sans-serif;
+}
+
+a {
+	color: #00a3de;
+}
+
+a:hover {
+	color: #00a3de;
+	text-decoration: none;
+}
+
+.header h1 span {
+	font-family: 'Pacifico', cursive;
+	font-size: 0.8em;
+	color: #00a3de;
+}
+
+article {
+	margin-bottom: 20px;
+}
+
+.featured-image {
+	position: relative;
+	border-top: 5px solid #2E221F;
+	border-bottom: 5px solid #2E221F;
+	height: 300px;
+	background-size: cover;
+	background-position: 50% 50%;
+	margin-bottom: 20px;
+}
+
+.featured-image .post-title {
+	max-width: 50%;
+	margin-left: 20px;
+	padding: 10px;
+	display: inline-block;
+	background: rgba(46,34,31,0.9);
+}
+
+.featured-image h2 {
+	text-transform: uppercase;
+	margin: 0px;
+	padding: 0px;
+	color: #00a3de;
+	background: -webkit-linear-gradient(#00a3de, #2efef7);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.featured-image .post-tags {
+	position: absolute;
+	right: 20px;
+	bottom: 15px;
+}
+
+.featured-image .post-tags .badge {
+	border-radius: 2px;
+	background: -webkit-linear-gradient(#00a3de, #2efef7);
+	margin-right: 10px;
+	font-weight: 600;
+}
+
+.featured-image .post-tags .badge a {
+	color: #2E221F;
+}
+
+.featured-image .post-tags .badge:last-child {
+	margin-right: 0px;
+}
+
+.poster-avatar {
+	border: 2px solid #2E221F;
 }
