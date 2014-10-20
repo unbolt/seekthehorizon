@@ -39,7 +39,7 @@
         
         <div class="row">
         	<div class="col-md-12">
-        		<? echo get_avatar( get_the_author_meta('user_email'), $size = '50'); ?> &nbsp; <em>Posted <?php the_date('F j, Y'); ?>, <?php comments_number( 'No Horizon Seekers', 'One Saught the Horizon', '% Horizon Seekers' ); ?></em>
+        		<? echo get_avatar( get_the_author_meta('user_email'), $size = '50'); ?> &nbsp; <em>Posted <?php the_time('F j, Y'); ?>, <?php comments_number( 'No Horizon Seekers', 'One Sought the Horizon', '% Horizon Seekers' ); ?></em>
         	</div>
         </div>
     </article>

@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<?php get_sidebar(); ?>
 				</div>
-				<div class="col-md-9 col-md-offset-1">
+				<div class="col-md-9">

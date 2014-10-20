@@ -6,11 +6,27 @@
 	</div>
 	
 	<div class="sidebar-menu">
-		Standard menu
+		<?php 
+		wp_nav_menu(
+			array(
+				'theme_location'=>'sidebar-top-menu',
+				'menu_class'=>'page-links',
+				'container'=>''
+			)
+		);
+		?>
 	</div>
 	
 	<div class="sidebar-featured-menu">
-		Featured menu
+		<?php 
+		wp_nav_menu(
+			array(
+				'theme_location'=>'sidebar-bottom-menu',
+				'menu_class'=>'featured-links',
+				'container'=>''
+			)
+		);
+		?>
 	</div>
 
 	<div class="sidebar-widget">
