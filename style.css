@@ -117,25 +117,102 @@ ul.page-links, ul.featured-links {
 	list-style: none;
 }
 
+ul.page-links li a {
+	color: #2E221F;
+}
+
+ul.page-links li a:before {
+	color: #00a3de;
+	margin-right: 5px;
+	font-family: fontawesome;
+	content: '\f101';
+	font-size: 1em;
+	
+	-webkit-transition: all 1s ease-out;  
+    -moz-transition: all 1s ease-out;  
+    -o-transition: all 1s ease-out;  
+    transition: all 1s ease-out; 
+}
+
+ul.page-links li:hover a:before {
+	color: #2E221F;
+}
+
 ul.featured-links li a {
 	color: #2E221F;
 }
 
 ul.featured-links li {
 	
+	border: 1px solid #00a3de;
+	
 	padding: 3px;
 	border-radius: 3px;
 	
-	background-color: #00a3de;
 	margin-bottom: 3px;
 	
-    -webkit-transition: background 1s ease-out;  
-    -moz-transition: background 1s ease-out;  
-    -o-transition: background 1s ease-out;  
-    transition: background 1s ease-out;  
+    background: inherit; /* for old shitty browsers */
+
+    background: linear-gradient(to right, transparent 33%, rgba(0,163,222,0.25) 66%);
+    background-size: 300% 100%;
+    background-position:left bottom;
+    transition:all 0.3s ease; 
     
 }
 
 ul.featured-links li:hover {
-	background-color: #2efef7;
+	background-position:right bottom;
+}
+
+ul.social-links {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+ul.social-links li {
+	display: inline-block;
+}
+
+ul.social-links li a {
+	display: block;
+	width: 3em;
+	overflow: hidden;
+	padding-top: 10px;
+	padding-right: 25px;
+	color: #2E221F;
+}
+
+ul.social-links li a:before {
+	font-size: 3em;
+	padding-right: 10px;
+	font-family: fontawesome;
+}
+
+ul.social-links li a[href*="twitter"]:before {
+	content: "\f081";
+}
+ul.social-links li a[href*="github"]:before {
+	content: "\f092";
+}
+ul.social-links li a[href*="steam"]:before {
+	content: "\f1b7";
+}
+
+/* FFXIV Page Specific */
+.progress {
+	height: 5px;
+	border-radius: 0px;
+	box-shadow: none;
+	background-color: #2E221F;
+}
+.progress-bar {
+	background-color: #00a3de;
+}
+
+.class-level {
+	font-size: 2em;
+}
+.class-name {
+	text-transform: capitalize;
+	line-height: 2em;
 }

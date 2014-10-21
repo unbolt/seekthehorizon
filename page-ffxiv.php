@@ -76,29 +76,98 @@ if($cache === false) {
 
 get_header();
 ?>
-<div class="row">
-	<div class="col-md-6">
-		<h1><?=$character['name'];?></h1>
-		<h2><?=$character['level'];?> <?=$character['class'];?></h2>
-	</div>
-	<div class="col-md-6">
-		<? echo '<img src="'. $character['portrait'].'" />'; ?>
+
+<?php 
+if (has_post_thumbnail()):
+	
+	$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
+?>
+<div class="featured-image" style="background-image: url('<? echo $feat_image; ?>');">
+	<div class="post-title">
+    	<h2>
+        	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+    	</h2>
 	</div>
 </div>
 
-
-<?
-// Minions
-foreach($character['minions'] as $minion) {
-	echo '<img src="'.$minion['icon'].'" class="tooltipme" data-toggle="tooltip" data-placement="top" title="'.$minion['name'].'" />';
-}
-
-print_r($character['levels']);
-
-print_r($character['gear']);
-
+<?php 
+// End the featured image check statement
+endif; 
 ?>
 
+<div class="row">
+	<div class="col-md-6">
+	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<? the_content(); ?>
+	<?php
+		endwhile;
+		endif;
+	?>
+	</div>
+	<div class="col-md-6">
+		<!--
+		Array ( 
+		[class] => gladiator 
+		[icon] => http://img.finalfantasyxiv.com/lds/pc/global/images/class/24/ec5d264e53ea7749d916d7d8bc235ec9c8bb7b51.png 
+		[level] => 50 
+		[exp] => Array ( 
+			[current] => 0
+			[max] => 0 
+		) 
+		[exp-current] => 0 
+		[exp-max] => 0 )
+		-->
+		
+		<div class="row">
+		<?
+		$count = 1;
+		foreach($character['levels'] as $class) {
+			?>
+			<div class="col-sm-6">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="class-level">
+						<?=$class['level']; ?>
+						</div>
+					</div>
+					<div class="col-sm-10">
+						<div class="class-name">
+						<?=$class['class'];?>
+						</div>
+						<?
+							// Work out the percentages
+							$percentage = round(($class['exp']['current'] / $class['exp']['max'])*100);
+							$toggleclass = 'tooltipme';
+							
+							if($class['level'] == 50) {
+								$percentage = 100;
+								$toggleclass = '';	
+							}
+						?>
+						<div class="progress <?=$toggleclass;?>" data-toggle="tooltip" data-placement="top" title="<?=$class['exp']['current'];?> / <?=$class['exp']['max'];?>">
+						  <div class="progress-bar" role="progressbar" aria-valuenow="<?=$percentage;?>" aria-valuemin="0" aria-valuemax="100" style="width: <?=$percentage;?>%;">
+						  </div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<?
+			$count++;
+			
+			if($count % 2 != 0) {
+				$count = 1;
+				?>
+				</div>
+				<div class="row">
+				<?
+			} 
+			
+		}
+		?>
+		</div>
+	</div>
+</div>
 
 <?
 get_footer();

@@ -10,6 +10,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <? wp_head(); ?>
+        
+        <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-55950934-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
 	</head>
 	<body <? body_class(); ?>>
 	<script type="text/javascript" src="http://xivdb.com/tooltips.js?v=1.6"></script>
@@ -32,8 +43,16 @@
 						</a>
 					</div>
 				</div>
-				<div class="col-md-4">
-					Social
+				<div class="col-md-4 text-right">
+					<?php 
+						wp_nav_menu(
+							array(
+								'theme_location'=>'top-social-menu',
+								'menu_class'=>'social-links',
+								'container'=>''
+							)
+						);
+					?>
 				</div>
 			</div>
 			<div class="row">

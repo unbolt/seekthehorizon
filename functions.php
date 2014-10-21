@@ -102,7 +102,8 @@ function seekthehorizon_register_menu()
 {
     register_nav_menus(array(
         'sidebar-top-menu' => __('Sidebar Top Menu', 'seekthehorizon'), 
-        'sidebar-bottom-menu' => __('Sidebar Bottom Menu', 'seekthehorizon') 
+        'sidebar-bottom-menu' => __('Sidebar Bottom Menu', 'seekthehorizon'),
+        'top-social-menu' => __('Top Social Links', 'seekthehorizon')
     ));
 }
 
