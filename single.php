@@ -4,9 +4,15 @@
     <section>
         <?php get_template_part('loop'); ?>
 
-        <?php get_template_part('pagination'); ?>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<?php get_template_part('pagination'); ?>
         
-        <?php comments_template(); ?> 
+		        <?php comments_template(); ?> 
+			</div>
+		</div>
+	</div>
 
     </section>
 </main>

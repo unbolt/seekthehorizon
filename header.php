@@ -18,6 +18,7 @@
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		
 		  ga('create', 'UA-55950934-1', 'auto');
+		  ga('require', 'displayfeatures');
 		  ga('send', 'pageview');
 		
 		</script>
@@ -34,17 +35,37 @@
 		'showIcon' : true,
 		}
 	</script>
+	<section class="pageheader">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8">
+				<div class="col-md-4">
 					<div class="header">
 						<a href="<?php echo site_url(); ?>" alt="Seek the Horizon - Home">
 						<h1>seek<span>the</span>horizon</h1>
 						</a>
 					</div>
 				</div>
+				<div class="col-md-8">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/ffxiv.png" /> Final Fantasy XIV
+					<img src="<?php echo get_template_directory_uri(); ?>/img/cactuar.png" /> Coding
+					<img src="<?php echo get_template_directory_uri(); ?>/img/moogle.png" /> Photos
+				</div>
+			</div>
+		</div>
+		<div class="pageheaderborder">
+		
+		</div>
+	</section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-2">
+					
+				</div>
+			</div>
+			<div class="row">
 				<div class="col-md-4 text-right">
 					<?php 
+					/*
 						wp_nav_menu(
 							array(
 								'theme_location'=>'top-social-menu',
@@ -52,11 +73,8 @@
 								'container'=>''
 							)
 						);
+						*/
 					?>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-3">
-					<?php get_sidebar(); ?>
-				</div>
-				<div class="col-md-9">
+		</div>

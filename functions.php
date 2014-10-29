@@ -34,6 +34,9 @@ function seekthehorizon_header_scripts() {
 
         wp_register_script('bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', false, '3.2.0'); // Bootstrap
         wp_enqueue_script('bootstrap');
+        
+        wp_register_script('socketio', '//cdn.socket.io/socket.io-1.1.0.js', false, '1.1.0');
+        wp_enqueue_script('socketio');
 
         wp_register_script('seekthehorizonscripts', get_template_directory_uri() . '/js/seekthehorizon.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('seekthehorizonscripts');
@@ -63,7 +66,7 @@ function seekthehorizon_styles()
     wp_register_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), '4.2.0', 'all');
     wp_enqueue_style('fontawesome');
     
-    wp_register_style('googlefonts', 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:400,300,700|Pacifico', array(), '1.0.0', 'all');
+    wp_register_style('googlefonts', 'http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Roboto:400,300,700|Pacifico|Roboto+Condensed', array(), '1.0.0', 'all');
     wp_enqueue_style('googlefonts');
     
     wp_register_style('seekthehorizon', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
@@ -131,6 +134,13 @@ if (function_exists('register_sidebar'))
     ));
 }
 
+function remove_img_width_height( $html, $post_id, $post_image_id,$post_thumbnail) {
+    if ($post_thumbnail=='thumbnail'){
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    }
+    return $html;
+}
+
 /*
  * ACTIONS + FILTERS + SHORTCODES
  */
@@ -149,3 +159,4 @@ add_filter('style_loader_tag', 'seekthehorizon_style_remove'); // Remove 'text/c
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 add_filter('get_avatar','change_avatar_css');
+add_filter('wp_get_attachment_link', 'remove_img_width_height', 10, 4);
