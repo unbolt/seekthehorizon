@@ -31,4 +31,7 @@ jQuery(document).ready(function() {
 		console.log('TWEET');
 		console.log(data);
 	});
+
+	// Setup the parallax
+	$('.parallax').parallax("50%", 0.2, true);
 });

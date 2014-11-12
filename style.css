@@ -36,307 +36,40 @@ a:hover {
 }
 
 .pageheader {
+	background: url('http://seekthehorizon.com/wp-content/uploads/2014/10/94317.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding-bottom: 60px;
+}
+
+.header-nav {
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+.header-nav-bg {
+	height: 30px;
+	width: 100%;
+	position: absolute;
+	background: #fff;
+}
+
+.logo {
 	background-color: #000;
-}
-
-.pageheaderborder {
-	height: 3px;
-	background: #00a3de; /* Old browsers */
-	background: -moz-linear-gradient(left,  #00a3de 1%, #1a6393 34%, #00a3de 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(1%,#00a3de), color-stop(34%,#1a6393), color-stop(100%,#00a3de)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* IE10+ */
-	background: linear-gradient(to right,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a3de', endColorstr='#00a3de',GradientType=1 ); /* IE6-9 */
-}
-
-.header h1 {
 	color: #fff;
-	font-family: 'Roboto Condensed', sans-serif;
-	text-transform: uppercase;
-	font-weight: lighter;
-	font-size: 26px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	line-height: 50px;
+	height: 150px;
 }
 
-.header h1 span {
-	text-transform: lowercase;
-	font-family: 'Pacifico', cursive;
-	font-size: 0.9em;
-	color: #00a3de;
-	background: -webkit-linear-gradient(#00a3de, #2efef7);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+.main-content {
+	margin-top: -40px;
 }
 
-article {
+.box {
+	background-color: #fff;
 	margin-bottom: 20px;
-}
-
-
-/* LOOP STYLES - HOMEPAGE AND CATEGORIES */
-
-.loop-thumbnail-container {
-	position: relative;
-	width: 100%;
-	height: 0;
-	padding: 56.25% 0 0 0;
-	background: #00a3de; /* Old browsers */
-	background: -moz-linear-gradient(left,  #00a3de 1%, #1a6393 34%, #00a3de 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(1%,#00a3de), color-stop(34%,#1a6393), color-stop(100%,#00a3de)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* IE10+ */
-	background: linear-gradient(to right,  #00a3de 1%,#1a6393 34%,#00a3de 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a3de', endColorstr='#00a3de',GradientType=1 ); /* IE6-9 */
-}
-
-.loop-thumbnail-container:after {
-	content : "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-size: cover;
-	width: 100%;
-	height: 0;
-	padding: 56.25% 0 0 0;
-	opacity : 0.2;
-	z-index: 1;
-	filter: blur(2px);
-	-webkit-filter: blur(2px);
-}
-
-.loop-thumbnail-image {
-	background-size: cover;
-	margin-left: 5px;
-	margin-top: 5px;
-	width: calc(100% - 10px);
-	height: calc(100% - 10px);
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	z-index: 10;
-}
-
-.loop-thumbnail-container:hover .loop-thumbnail-image {
-	margin: 0px;
-	width: 100%;
-	height: 100%;
-}
-
-.loop-thumbnail-post-title {
-	position: absolute;
-	top: 10px;
-	left: 0px;
-	padding: 10px;
-	width: calc(100% - 10px);
-	margin-left: 5px;
-	z-index: 12;
-	display: inline-block;
-	background: rgba(0,0,0,0.7);
-}
-
-.loop-thumbnail-post-title h2 {
-	text-transform: uppercase;
-	margin: 0px;
-	padding: 0px;
-	color: #00a3de;
-	background: -webkit-linear-gradient(#00a3de, #2efef7);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.loop-thumbnail-container:hover .loop-thumbnail-post-title {
-	width: 100%;
-	padding-left: 15px;
-	margin-left: 0px;
-}
-
-.featured-image {
-	position: relative;
-	border-top: 5px solid #000;
-	border-bottom: 5px solid #000;
-	height: 300px;
-	background-size: cover;
-	background-position: 50% 50%;
-	margin-bottom: 20px;
-}
-
-.featured-image .container, .featured-image .container .row, .featured-image .container .row .col-md-12 {
-	height: 100%;
-}
-
-.featured-image .post-title {
-	max-width: 50%;
-	padding: 10px;
-	display: inline-block;
-	background: rgba(0,0,0,0.9);
-}
-
-.featured-image h2 {
-	text-transform: uppercase;
-	margin: 0px;
-	padding: 0px;
-	color: #00a3de;
-	background: -webkit-linear-gradient(#00a3de, #2efef7);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.featured-image .post-tags {
-	position: absolute;
-	right: 20px;
-	bottom: 15px;
-}
-
-.featured-image .post-tags .badge {
-	border-radius: 2px;
-	background: -webkit-linear-gradient(#00a3de, #2efef7);
-	margin-right: 10px;
-	font-weight: 600;
-}
-
-.featured-image .post-tags .badge a {
-	color: #000;
-}
-
-.featured-image .post-tags .badge:last-child {
-	margin-right: 0px;
-}
-
-.poster-avatar {
-	border: 2px solid #000;
-}
-
-.gallery-icon img {
-	max-width: 95%;
-	border: 2px solid #000;
-}
-
-.gallery-icon img:hover {
-	border-color: #00a3de;
-}
-
-/* Sidebar styles */
-
-/* Twitter widget */
-.widget_latest_tweets_widget {
-
-}
-
-.widget_latest_tweets_widget ul {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
-
-/* Page menu styles */
-ul.page-links, ul.featured-links {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
-
-ul.page-links li a {
-	color: #2E221F;
-}
-
-ul.page-links li a:before {
-	color: #00a3de;
-	margin-right: 5px;
-	font-family: fontawesome;
-	content: '\f101';
-	font-size: 1em;
-	
-	-webkit-transition: all 1s ease-out;  
-    -moz-transition: all 1s ease-out;  
-    -o-transition: all 1s ease-out;  
-    transition: all 1s ease-out; 
-}
-
-ul.page-links li:hover a:before {
-	color: #2E221F;
-}
-
-ul.featured-links li a {
-	color: #2E221F;
-}
-
-ul.featured-links li {
-	
-	border: 1px solid #00a3de;
-	
-	padding: 3px;
-	border-radius: 3px;
-	
-	margin-bottom: 3px;
-	
-    background: inherit; /* for old shitty browsers */
-
-    background: linear-gradient(to right, transparent 33%, rgba(0,163,222,0.25) 66%);
-    background-size: 300% 100%;
-    background-position:left bottom;
-    transition:all 0.3s ease; 
-    
-}
-
-ul.featured-links li:hover {
-	background-position:right bottom;
-}
-
-ul.social-links {
-	padding: 0px;
-	margin: 0px;
-	list-style: none;
-}
-ul.social-links li {
-	display: inline-block;
-}
-
-ul.social-links li a {
-	display: block;
-	width: 3em;
-	overflow: hidden;
-	padding-top: 10px;
-	padding-right: 25px;
-	color: #2E221F;
-}
-
-ul.social-links li a:before {
-	font-size: 3em;
-	padding-right: 10px;
-	font-family: fontawesome;
-}
-
-ul.social-links li a[href*="twitter"]:before {
-	content: "\f081";
-}
-ul.social-links li a[href*="github"]:before {
-	content: "\f092";
-}
-ul.social-links li a[href*="steam"]:before {
-	content: "\f1b7";
-}
-
-/* FFXIV Page Specific */
-.progress {
-	height: 5px;
-	border-radius: 0px;
-	box-shadow: none;
-	background-color: #2E221F;
-}
-.progress-bar {
-	background-color: #00a3de;
-}
-
-.class-level {
-	font-size: 2em;
-}
-.class-name {
-	text-transform: capitalize;
-	line-height: 2em;
+	box-shadow: 6px 6px 0px rgba(0, 0, 0, .04);
+	-moz-box-shadow: 6px 6px 0px rgba(0, 0, 0, .04);
+	-webkit-box-shadow: 6px 6px 0px rgba(0, 0, 0, .04);
 }

@@ -35,46 +35,43 @@
 		'showIcon' : true,
 		}
 	</script>
-	<section class="pageheader">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="header">
-						<a href="<?php echo site_url(); ?>" alt="Seek the Horizon - Home">
-						<h1>seek<span>the</span>horizon</h1>
-						</a>
+	
+	<section class="pageheader parallax">
+		<section class="header-nav">
+			<div class="header-nav-bg">&nbsp;</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2 text-center logo">
+						<img src="http://placehold.it/150x150" height="150" width="150" />
+					</div>
+					<div class="col-md-8 col-md-offset-1">
+						NAV
+						
+						<!--
+						<?php 
+							wp_nav_menu(
+								array(
+									'theme_location'=>'top-header-menu',
+									'menu_class'=>'header-menu',
+									'container'=>''
+								)
+							);
+						?>
+						-->
 					</div>
 				</div>
-				<div class="col-md-8">
-					<img src="<?php echo get_template_directory_uri(); ?>/img/ffxiv.png" /> Final Fantasy XIV
-					<img src="<?php echo get_template_directory_uri(); ?>/img/cactuar.png" /> Coding
-					<img src="<?php echo get_template_directory_uri(); ?>/img/moogle.png" /> Photos
+			</div>
+		</section>
+		<section class="header-text">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h1>Text appears here</h1>
+						<h2>Sub text can be here below it.</h2>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="pageheaderborder">
-		
-		</div>
+		</section>
 	</section>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-2">
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-right">
-					<?php 
-					/*
-						wp_nav_menu(
-							array(
-								'theme_location'=>'top-social-menu',
-								'menu_class'=>'social-links',
-								'container'=>''
-							)
-						);
-						*/
-					?>
-				</div>
-			</div>
-		</div>
+	
+	

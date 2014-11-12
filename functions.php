@@ -12,7 +12,7 @@ if (function_exists('add_theme_support'))
 
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
-    add_image_size('large', 700, '', true); // Large Thumbnail
+    add_image_size('large', 710, 395, true); // Large Thumbnail
     add_image_size('medium', 250, '', true); // Medium Thumbnail
     add_image_size('small', 120, '', true); // Small Thumbnail
     add_image_size('preview', 500, 500, true); // Preview image
@@ -37,6 +37,9 @@ function seekthehorizon_header_scripts() {
         
         wp_register_script('socketio', '//cdn.socket.io/socket.io-1.1.0.js', false, '1.1.0');
         wp_enqueue_script('socketio');
+        
+        wp_register_script('jqueryparallax', get_template_directory_uri() . '/js/jquery.parallax.min.js', array('jquery'), '1.1.0');
+        wp_enqueue_script('jqueryparallax');
 
         wp_register_script('seekthehorizonscripts', get_template_directory_uri() . '/js/seekthehorizon.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('seekthehorizonscripts');
@@ -106,7 +109,7 @@ function seekthehorizon_register_menu()
     register_nav_menus(array(
         'sidebar-top-menu' => __('Sidebar Top Menu', 'seekthehorizon'), 
         'sidebar-bottom-menu' => __('Sidebar Bottom Menu', 'seekthehorizon'),
-        'top-social-menu' => __('Top Social Links', 'seekthehorizon')
+        'top-header-menu' => __('Top Header Menu', 'seekthehorizon')
     ));
 }
 
